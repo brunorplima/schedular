@@ -5,6 +5,7 @@ import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import eventRoute from './routes/eventRoute.js';
 import taskRoute from './routes/taskRoute.js';
+import reminderRoute from './routes/reminderRoute.js';
 
 dotenv.config();
 const PORT = process.env.PORT || 5000;
@@ -15,6 +16,7 @@ app.use(bodyParser.json({ limit: '30mb', extended: true }));
 
 app.use('/events', eventRoute);
 app.use('/tasks', taskRoute);
+app.use('/reminders', reminderRoute);
 
 const mongooseCongif = {
    useNewUrlParser: true,
