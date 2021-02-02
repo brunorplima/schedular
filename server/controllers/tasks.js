@@ -65,9 +65,9 @@ export const addTask = async (req, res) => {
 export const updateTask = async (req, res) => {
    const toBeUpdated = req.body;
    const { id } = req.params;
-   
+
    try {
-      const task = await taskModel.findByIdAndUpdate(id, toBeUpdated);
+      const task = await taskModel.findByIdAndUpdate(id, toBeUpdated, { new: true });
       res.status(200).json(task);
    } catch (error) {
       console.log(error.message);
@@ -84,10 +84,10 @@ export const updateTask = async (req, res) => {
  */
 export const deleteTask = async (req, res) => {
    const { id } = req.params;
-   
+
    try {
       const deletedTask = await taskModel.findByIdAndDelete(id);
-      res.status(200).json(deletedTask);      
+      res.status(200).json(deletedTask);
    } catch (error) {
       console.log(error.message);
       res.status(404).json({ error: error.message });
