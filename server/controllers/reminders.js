@@ -4,7 +4,7 @@ import reminderModel from '../models/reminderModel.js';
 export const getReminders = async (req, res) => {
    try {
       const reminders = await reminderModel.find();
-      res.status(404).json(reminders);
+      res.status(200).json(reminders);
    } catch (error) {
       console.error(error.message);
       res.status(404).json({ error: error.message });
