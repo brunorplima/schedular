@@ -9,6 +9,7 @@ import eventModel from '../models/eventModel.js';
 export async function getEvents(req, res) {
    try {
       const events = await eventModel.find();
+      events.forEach(event => event.dateTime = new Date(event.dateTime));
       res.status(200).json(events);
    } catch (error) {
       console.error(error.message);
