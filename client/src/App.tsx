@@ -1,26 +1,32 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useEffect } from 'react';
+import NavBar from './components/navbar/NavBar';
+import { useStore, useDispatch } from 'react-redux'
+import { createGetEventsAction } from './redux/actions/eventActions';
+
 import './App.scss';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+   const store = useStore();
+   const dispatch = useDispatch();
+   console.log(store.getState().events);
+
+   store.subscribe(() => {
+      console.log(store.getState().events)
+   })
+
+   useEffect(() => {
+      dispatch(createGetEventsAction());
+   }, [])
+
+
+   return (
+      <div className="App">
+         <NavBar />
+
+      </div>
+   );
 }
 
 export default App;
