@@ -13,6 +13,19 @@ export interface CalendarEvent {
    guests?: string
 }
 
+export interface UnsavedCalendarEvent {
+   dateTime: Date,
+   name: string,
+   reminder?: {
+      _id: string,
+      dateTime: Date,
+      description?: string
+   },
+   description?: string,
+   location?: string,
+   guests?: string
+}
+
 export interface Task {
    _id: string,
    dateTime: Date,
