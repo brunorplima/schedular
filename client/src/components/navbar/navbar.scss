@@ -1,0 +1,62 @@
+@import '../../App.scss';
+
+.plus-button-clicked {
+   animation: blue-button-click .5;
+   animation-timing-function: ease-out;
+}
+
+.plus-button {
+   background-color: $blue;
+   width: 2.5rem;
+   height: 2.5rem;
+   border-radius: 100%;
+   color: white;
+   font-size: 24pt;
+   cursor: pointer;
+   position: relative;
+
+   .plus-button-options {
+      position: absolute;
+      top: calc(100% + 1rem);
+      left: 0;
+      z-index: 3;
+      background-color: $gray-light;
+      width: max-content;
+      border-radius: .3rem;
+
+      .arrow-up {
+         position: absolute;
+         width: 0; 
+         height: 0; 
+         border-left: 10px solid transparent;
+         border-right: 10px solid transparent;
+         border-bottom: 15px solid $gray-light;
+         top: -13px;
+         left: .68rem;
+         z-index: -1;
+      }
+
+      .pb-option {
+         padding: .5rem 1rem;
+         min-width: max-content;
+         min-height: max-content;
+         color: black;
+         font-size: 12pt;
+         user-select: none;
+
+         &:active {
+            background-color: $blue;
+         }
+      }
+
+      .top-option {
+         border-top-left-radius: .3rem;
+         border-top-right-radius: .3rem;
+      }
+
+      .bottom-option {
+         border-bottom-left-radius: .3rem;
+         border-bottom-right-radius: .3rem;
+      }
+   }
+}
