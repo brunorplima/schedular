@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Navbar } from 'react-bootstrap';
 import { IoIosAdd } from 'react-icons/io';
-import AddNewModal from '../modal/CreateEventModal';
+import CreateAndUpdateModal from '../modal/CreateAndUpdateModal';
 
 import './navbar.scss';
 
@@ -27,7 +27,7 @@ const NavBar = () => {
    return (
       <Navbar bg="light" expand="lg">
 
-         <AddNewModal type={addType} isOpen={isModalOpen} closePortal={closePortal} closeWhenComplete={() => setIsModalOpen(false)}/>
+         <CreateAndUpdateModal type={addType} isOpen={isModalOpen} closePortal={closePortal} closeWhenComplete={() => setIsModalOpen(false)}/>
 
          <div
             className='plus-button d-flex justify-content-center align-items-center'

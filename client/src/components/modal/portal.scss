@@ -1,0 +1,66 @@
+@import '../../App.scss';
+
+#modal-container {
+   background-color: rgba(0, 0, 0, .6);
+   position: fixed;
+   top: 0;
+   bottom: 0;
+   right: 0;
+   left: 0;
+
+   .add-new-portal {
+      background-color: white;
+      padding: .5rem 1rem;
+      width: 90%;
+      max-height: 90%;
+      overflow: scroll;
+
+      .form {
+         position: relative;
+         padding-bottom: 1rem;
+         
+         .form-close {
+            position: absolute;
+            width: 3rem;
+            height: 2rem;
+            top: 0 - .5rem;
+            right: 0 - 1rem;
+            font-size: 18pt;
+            cursor: pointer;
+
+            &:hover {
+               background-color: rgb(255, 52, 52);
+               color: $gray-light;
+            }
+         }
+
+         .form-header {
+            padding: .5rem 0;
+            border-bottom: 1px solid $gray;
+            margin-bottom: 1rem;
+
+         }
+
+         .error-list {
+            padding: .3rem 0;
+
+            .el-error {
+               background-color: rgb(255, 160, 160);
+               padding: 0 .15rem;
+               border-radius: .25rem;
+               border: 1px solid red;
+               display: flex;
+               align-items: center;
+               font-size: 10pt;
+
+               div {
+                  margin: 0 .3rem;
+                  display: flex;
+                  align-items: center;
+                  font-size: 10pt;
+               }
+            }
+         }
+      }
+   }
+}
