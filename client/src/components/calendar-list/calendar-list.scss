@@ -1,0 +1,41 @@
+@import '../../App.scss';
+
+.calendar-list-container {
+
+   .clc-options {
+      background-color: $gray-light;
+      border-top: 1px solid $gray;
+
+      .clc-option {
+         padding: 1rem;
+         cursor: pointer;
+      }
+      .clc-option-border {
+         border-bottom: 5px solid $green;
+      }
+   }
+
+   .clc-list {
+      padding: .7rem;
+
+      .clc-list-item {
+         padding: .5rem;
+         background-color: $bleen;
+         color: white;
+         margin-bottom: 1rem;
+         position: relative;
+
+         .clc-menu-dots {
+            position: absolute;
+            top: .1rem;
+            right: .3rem;
+            cursor: pointer;
+            font-size: 16pt;
+         }
+      }
+
+      .clc-item-last {
+         margin-bottom: 0;
+      }
+   }
+}
