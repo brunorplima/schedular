@@ -2,6 +2,8 @@ import React, { useEffect } from 'react';
 import NavBar from './components/navbar/NavBar';
 import { useStore, useDispatch } from 'react-redux'
 import { createGetEventsAction } from './redux/actions/eventActions';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import CalendarList from './components/calendar-list/CalendarList';
 
 import './App.scss';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -18,13 +20,20 @@ function App() {
 
    useEffect(() => {
       dispatch(createGetEventsAction());
-   }, [])
+   }, [dispatch])
 
 
    return (
       <div className="App">
          <NavBar />
 
+         <Router>
+            <Switch>
+               <Route path='/calendar-list'>
+                  <CalendarList />
+               </Route>
+            </Switch>
+         </Router>
       </div>
    );
 }
