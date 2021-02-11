@@ -12,7 +12,6 @@ export interface CalendarEvent {
    location?: string,
    guests?: string
 }
-
 export interface UnsavedCalendarEvent {
    dateTime: Date,
    name: string,
@@ -26,12 +25,21 @@ export interface UnsavedCalendarEvent {
    guests?: string
 }
 
+
+
 export interface Task {
    _id: string,
    dateTime: Date,
    name: string,
    description?: string
 }
+export interface UnsavedTask {
+   dateTime: Date,
+   name: string,
+   description?: string
+}
+
+
 
 export interface Reminder {
    _id: string,
@@ -40,6 +48,14 @@ export interface Reminder {
    description?: string,
    repeat?: [string]
 }
+export interface UnsavedReminder {
+   dateTime: Date,
+   subject: string,
+   description?: string,
+   repeat?: [string]
+}
+
+
 
 export interface Note {
    _id: string,
@@ -47,6 +63,13 @@ export interface Note {
    text: string,
    title?: string
 }
+export interface UnsavedNote {
+   date: Date,
+   text: string,
+   title?: string
+}
+
+
 
 export interface Action {
    type: string,
