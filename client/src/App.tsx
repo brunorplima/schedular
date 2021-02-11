@@ -7,6 +7,8 @@ import CalendarList from './components/calendar-list/CalendarList';
 
 import './App.scss';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { createGetTasksAction } from './redux/actions/taskActions';
+import { createGetRemindersAction } from './redux/actions/reminderActions';
 
 function App() {
 
@@ -20,6 +22,8 @@ function App() {
 
    useEffect(() => {
       dispatch(createGetEventsAction());
+      dispatch(createGetTasksAction());
+      dispatch(createGetRemindersAction());
    }, [dispatch])
 
 
