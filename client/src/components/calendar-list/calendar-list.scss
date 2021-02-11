@@ -11,7 +11,7 @@
          cursor: pointer;
       }
       .clc-option-border {
-         border-bottom: 5px solid $green;
+         border-bottom: 5px solid $green-light;
       }
    }
 
@@ -20,7 +20,6 @@
 
       .clc-list-item {
          padding: .5rem;
-         background-color: $bleen;
          color: white;
          margin-bottom: 1rem;
          position: relative;
@@ -32,6 +31,18 @@
             cursor: pointer;
             font-size: 16pt;
          }
+      }
+
+      .clc-list-item-bleen {
+         background-color: $bleen;
+      }
+
+      .clc-list-item-purple {
+         background-color: $purple;
+      }
+
+      .clc-list-item-green {
+         background-color: $green;
       }
 
       .clc-item-last {

@@ -50,6 +50,17 @@ const CalendarList = ({ events, tasks, reminders }: Props) => {
       return time;
    }
 
+   function getBgClassName() {
+      switch (selectedOption) {
+         case 'Events':
+            return 'clc-list-item-bleen';
+         case 'Tasks':
+            return 'clc-list-item-purple';
+         default:
+            return 'clc-list-item-green';
+      }
+   }
+
    return (
       <div className='calendar-list-container'>
          <div className='clc-options d-flex'>
@@ -77,7 +88,7 @@ const CalendarList = ({ events, tasks, reminders }: Props) => {
                   const date = new Date(value.dateTime);
                   const lastItemClassName = idx + 1 === arr.length ? 'clc-item-last' : ''
                   return (
-                     <div key={value._id} className={`clc-list-item ${lastItemClassName}`}>
+                     <div key={value._id} className={`clc-list-item ${lastItemClassName} ${getBgClassName()}`}>
                         <div className='clc-menu-dots'><BiDotsVerticalRounded /></div>
                         <div className='d-flex'>
                            <div>{date.toDateString()}</div>
