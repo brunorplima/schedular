@@ -1,13 +1,16 @@
 import * as actionTypes from '../constants';
 import * as api from '../../api/api';
-import { UnsavedCalendarEvent } from '../../interfaces/interfaces';
+import { CalendarEvent, UnsavedCalendarEvent } from '../../interfaces/interfaces';
 
 export const createGetEventsAction = () => async (disptach: any) => {
    try {
       const { data } = await api.getEventsApi();
-      data.forEach((event: any) => event = new Date(event));
+      const events = data.map((event: CalendarEvent) => {
+         event.dateTime = new Date(event.dateTime);
+         return event;
+      })
 
-      disptach({ type: actionTypes.GET_EVENTS, payload: data });
+      disptach({ type: actionTypes.GET_EVENTS, payload: events });
    } catch (error) {
       console.error('Error in getEventAcion: ' + error.message);
    }
@@ -16,7 +19,7 @@ export const createGetEventsAction = () => async (disptach: any) => {
 export const createPostEventAction = (newPost: UnsavedCalendarEvent) => async (dispatch: any) => {
    try {
       const { data } = await api.postEventApi(newPost);
-      dispatch({ type: actionTypes.ADD_EVENTS, payload: data })
+      dispatch({ type: actionTypes.ADD_EVENT, payload: data })
    } catch (error) {
       console.error('Error in createPostEventAction: ' + error.message);
    }
