@@ -71,6 +71,15 @@ export interface UnsavedNote {
 
 
 
+export interface DateTime {
+   year: number,
+   month: number,
+   day: number,
+   hour: number,
+   minute: number
+}
+
+
 export interface Action {
    type: string,
    payload?: any
